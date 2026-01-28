@@ -1,7 +1,10 @@
 import { test, expect } from '@playwright/test';
 
 test('Modal Confirmation Flow', async ({ page }) => {
-  await page.goto('/');
+  await page.goto(
+    'https://claude.ai/public/artifacts/1e02a9a5-4f20-4f19-a7ba-6c3f16c6eab9',
+    { waitUntil: 'domcontentloaded' }
+  );
   await page.getByRole('tab', { name: 'Responsive' }).click();
 
   await page.getByRole('button', { name: 'Open Modal' }).click();
